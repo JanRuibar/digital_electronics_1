@@ -6,15 +6,15 @@
 
    Greater than:
 
-   ![K-maps](images/kmap_empty.png)
+   ![K-maps](https://i.imgur.com/VRaYkzV.png)
 
    Less than:
 
-   ![K-maps](images/kmap_empty.png)
+   ![K-maps](https://i.imgur.com/fpaHOIy.png)
 
 2. Equations of simplified SoP (Sum of the Products) form of the "greater than" function and simplified PoS (Product of the Sums) form of the "less than" function.
 
-   ![Logic functions](images/comparator_min.png)
+   ![Logic functions](https://i.imgur.com/a5lWC4H.png)
 
 ### 4-bit comparator
 
@@ -37,7 +37,7 @@
                 (s_B_equals_A  = 'WRITE_CORRECT_VALUE_HERE') and
                 (s_B_less_A    = 'WRITE_CORRECT_VALUE_HERE'))
         -- If false, then report an error
-        report "Input combination COMPLETE_THIS_TEXT FAILED" severity error;
+        report "Input combination 0001, 1001 FAILED" severity error;
 
         -- Report a note at the end of stimulus process
         report "Stimulus process finished" severity note;
@@ -47,7 +47,7 @@
 
 2. Text console screenshot during your simulation, including reports.
 
-   ![your figure]()
+   ![your figure](https://i.imgur.com/1cWBlF1.png)
 
 3. Link to your public EDA Playground example:
 
