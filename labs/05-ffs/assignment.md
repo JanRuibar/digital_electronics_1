@@ -1,32 +1,4 @@
-# Lab 5: YOUR_FIRSTNAME LASTNAME
-
-**D-type FF**
-   | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
-   | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | `q(n+1)` has the same level as `d` |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 | 0 |  |
-   | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 |  |
-   | ![rising](images/eq_uparrow.png) | 1 | 1 | 1 |  |
-
-   **JK-type FF**
-   | **clk** | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
-   | :-: | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | 0 | Output did not change |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 1 | 1 | Output did not change |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 | 0 | 0 |  |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 | 1 | 0 |  |
-   | ![rising](images/eq_uparrow.png) | 1 | 0 | 0 | 1 |  |
-   | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 | 1 |  |
-   | ![rising](images/eq_uparrow.png) | 1 | 1 | 0 | 1 |  |
-   | ![rising](images/eq_uparrow.png) | 1 | 1 | 1 | 0 |  |
-
-   **T-type FF**
-   | **clk** | **t** | **q(n)** | **q(n+1)** | **Comments** |
-   | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | Output did not change |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 | 0 |  |
-   | ![rising](images/eq_uparrow.png) | 1 | 0 | 1 |  |
-   | ![rising](images/eq_uparrow.png) | 1 | 1 | 0 |  |
+# Lab 5: JAN_RUIBAR
 
 ### Flip-flops
 
@@ -51,8 +23,22 @@ begin
         if rising_edge(clk) then
 
         -- WRITE YOUR CODE HERE
+          if (rst = '1') then
+                  s_q <= '0';
+              else
+              		
+                  if (t = '0') then
+                  		--hold
+                      s_q <= s_q;
+                  else
+                  		--toggle
+                      s_q <= not s_q;
+                  end if;
+            
+            end if;
 
-        end if;
+
+       	end if;
     end process p_t_ff_rst;
 
     -- Output ports are permanently connected to local signal
@@ -63,10 +49,10 @@ end architecture Behavioral;
 
 2. Screenshot with simulated time waveforms. Try to simulate both flip-flops in a single testbench with a maximum duration of 200 ns, including reset. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
 
-   ![your figure]()
+   ![your figure](https://i.imgur.com/5PFEJxP.png)
 
 ### Shift register
 
 1. Image of the shift register `top` level schematic. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components and internal signals!
 
-   ![your figure]()
+   ![your figure](https://i.imgur.com/EO4Y84h.png)
